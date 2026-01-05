@@ -36,5 +36,9 @@ def main():
     except Exception as e:
         print(f"Error reading files: {e}")
 
+from gendiff import generate_diff
+diff = generate_diff('File1.json', 'file2.json')
+print(diff)
+
 if __name__ == '__main__':
     main()
