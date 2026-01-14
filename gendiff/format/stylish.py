@@ -1,9 +1,5 @@
 def label_stylish(node1, node2, ast_node):
-    '''
-    Adds label to each node key base on the node value.
-    First step in the `stylish` fomatter.
-    '''
-
+   
     keys = ast_node.keys()
 
     formatted_tree = {}
@@ -27,11 +23,6 @@ def label_stylish(node1, node2, ast_node):
 
 
 def stringify(value, replacer=' ', spaces_count=4):
-    '''
-    Turns labelled dictionary to a properly formatted string.
-    Second step in the `stylish` fomatter.
-    '''
-
     if not isinstance(value, dict):
         return str(value)
 
@@ -49,7 +40,7 @@ def stringify(value, replacer=' ', spaces_count=4):
             if not isinstance(children, dict):
                 item_str = filler + f'{name}: {children}'
             else:
-                # If there are a dict among children, continue recursively
+               
                 item_str = filler + f'{name}: {walk(children, depth + 1)}'
 
             return item_str

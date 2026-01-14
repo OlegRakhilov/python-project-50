@@ -39,9 +39,6 @@ def main():
         increment=args.increment
     )
 
-    # with open('tests/fixtures/nested_diff_result.txt', 'w') as f:
-    #     f.write(diff)
-
     print(diff)
 
 
