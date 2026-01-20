@@ -29,7 +29,7 @@ jobs:
 
       - name: Run lint
         run: |
-          flake8 your_package_or_module
+          flake8 PYTHON-PROJECT-50
 
       - name: Run tests
         run: |
