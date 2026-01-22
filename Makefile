@@ -1,37 +1,30 @@
 install:
-		poetry install
+	uv sync
 
-gendiff:
-		poetry run gendiff
-
-publish:
-		poetry publish --dry-run
-
-package-install:
-		python3 -m pip install --user dist/*.whl
-
-package-force-reinstall:
-		python3 -m pip install --user --force-reinstall dist/*.whl
+run:
+	uv run gendiff
 
 test:
-		poetry run pytest
-
-test-verbose:
-		poetry run pytest -vv
-
-pytest-cov:
-		poetry run pytest --cov=gendiff
+	uv run pytest
 
 test-coverage:
-		poetry run pytest --cov=gendiff --cov-report xml
+	uv run pytest --cov=gendiff --cov-report=xml:coverage.xml
 
 lint:
-		poetry run flake8 gendiff
+	uv run ruff check gendiff
 
-selfcheck:
-		poetry check
+check: test lint
 
-check: selfcheck test lint
+build:
+	uv build
 
-build: check
-		poetry build
+package-install:
+	uv tool install dist/*.whl
+
+reinstall:
+	uv tool install --force dist/*.whl
+
+uninstall:
+	uv tool uninstall hexlet-code
+
+.PHONY: install test lint selfcheck check build package-install reinstall uninstall

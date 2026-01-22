@@ -45,14 +45,14 @@ def test_generate_diff_json_format():
     file2 = "tests/test_data/file2_test.json"
     result = generate_diff(file1, file2, 'json')
     parsed_result = json.loads(result)
-    
+
     # 1. Проверяем, что это словарь (как и выдает ваша программа)
     assert isinstance(parsed_result, dict)
-    
+
     # 2. Проверяем наличие ключевых данных
     assert 'common' in parsed_result
     assert 'group1' in parsed_result
-    
+
     # 3. Проверяем, что значения внутри тоже являются структурами (словарями)
     assert isinstance(parsed_result.get('common'), dict)
 

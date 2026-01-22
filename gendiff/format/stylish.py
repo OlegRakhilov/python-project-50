@@ -1,5 +1,5 @@
 def label_stylish(node1, node2, ast_node):
-   
+
     keys = ast_node.keys()
 
     formatted_tree = {}
@@ -40,7 +40,7 @@ def stringify(value, replacer=' ', spaces_count=4):
             if not isinstance(children, dict):
                 item_str = filler + f'{name}: {children}'
             else:
-               
+
                 item_str = filler + f'{name}: {walk(children, depth + 1)}'
 
             return item_str
