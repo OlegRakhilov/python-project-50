@@ -25,8 +25,7 @@ jobs:
           make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@f90d1964177d5b881373581896798a3e75e9f85c # Use this only if specifically required for v5/v6 bridge
-        
+        uses: SonarSource/sonarqube-scan-action@f90d1964177d5b881373581896798a3e75e9f85c
         with:
           args: >
             -Dsonar.projectKey=OlegRakhilov_python-project-50
