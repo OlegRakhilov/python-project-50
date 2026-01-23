@@ -1,6 +1,7 @@
-from gendiff.parser import parse_data, transform_bool
-from gendiff.format import plain, stylish
 import json
+
+from gendiff.format import plain, stylish
+from gendiff.parser import parse_data, transform_bool
 
 
 def sort_dict(d):
