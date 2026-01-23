@@ -3,47 +3,23 @@ name = "python-project-50"
 version = "0.1.0"
 description = "Hexlet project 50"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "pyyaml>=6.0.3",
 ]
 
-[tool.poetry]
-name = "hexlet-code"
-version = "0.1.0"
-description = "The package allows to compare two configuration files and show a difference."
-authors = ["Miсhael Belvedersky <mike.belveder@gmail.com>"]
-readme = "README.md"
-packages = [
-  { include = "gendiff" }
-]
-
-
-[tool.poetry.dependencies]
-python = ">=3.13"
-pyyaml = "^6.0.1"
-
-
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+managed = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["gendiff"]
 
 [dependency-groups]
 dev = [
     "pytest>=9.0.2",
     "ruff>=0.14.14",
 ]
-
-
-[tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:main"
-
-[tool.ruff]
-# Base settings like line-length stay here
-line-length = 88
-
-[tool.ruff.lint]
-# Move these here
-select = ["E", "F", "W"]
-ignore = []
