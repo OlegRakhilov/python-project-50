@@ -12,6 +12,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
+          fetch-depth: 0
           python-version: '3.12'
       - name: Install dependencies
         run: |
@@ -25,14 +26,14 @@ jobs:
           make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@f90d1964177d5b881373581896798a3e75e9f85c # v6.0.0
+        uses: SonarSource/sonarqube-scan-action@v6
 
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
             -Dsonar.projectKey=OlegRakhilov_python-project-50
-            -Dsonar.organization=a9282268847
+            -Dsonar.organization=a2268847
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            "-Dsonar.coverage.exclusions=tests/**"
-            "-Dsonar.exclusions=tests/**" 
+            -Dsonar.coverage.exclusions=tests/**
+            -Dsonar.exclusions=tests/**
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
