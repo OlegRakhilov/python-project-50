@@ -24,14 +24,14 @@ jobs:
         run: |
           make test-coverage
 
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@f90d1964177d5b881373581896798a3e75e9f85c
+      - name: SonarQubeScan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=OlegRakhilov_python-project-50
-            -Dsonar.organization=a9282268847
+            -Dsonar.projectKey=n=OlegRakhilovython-project-50
+            -Dsonar.organization=n=a9282268847
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
             -Dsonar.exclusions=tests/**
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
