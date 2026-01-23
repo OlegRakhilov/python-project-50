@@ -23,3 +23,5 @@ dev = [
     "pytest>=9.0.2",
     "ruff>=0.14.14",
 ]
+[project.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
