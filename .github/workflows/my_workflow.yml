@@ -24,14 +24,14 @@ jobs:
         run: |
           make test-coverage
 
-      - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6  # Upgrade to v6
         with:
           args: >
             -Dsonar.projectKey=OlegRakhilov_python-project-50
-            -Dsonar.organization=OlegRakhilov
+            -Dsonar.organization=CORRECT_ORG_KEY_HERE
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
             -Dsonar.exclusions=tests/**
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
