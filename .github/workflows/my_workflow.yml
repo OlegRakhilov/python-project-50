@@ -29,8 +29,8 @@ jobs:
 
         with:
           args: >
-            -Dsonar.projectKey=a9282268847
-            -Dsonar.organization=OlegRakhilov_python-project-50
+            -Dsonar.projectKey=OlegRakhilov_python-project-50
+            -Dsonar.organization=a9282268847
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
             -Dsonar.exclusions=tests/**
