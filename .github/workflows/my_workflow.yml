@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '>=3.12'
       - name: Install dependencies
@@ -25,7 +25,7 @@ jobs:
           make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@99778216cb4886f7b767c293708f51a7027bc94b
+        uses: SonarSource/sonarqube-scan-action@v5
 
         with:
           args: >
