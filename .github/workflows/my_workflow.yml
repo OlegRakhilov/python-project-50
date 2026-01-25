@@ -26,7 +26,7 @@ jobs:
           make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v6
+        uses: SonarSource/sonarqube-scan-action@513361494101a415a772c91836f6e520f8c87893
 
         with:
           args: >
