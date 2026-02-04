@@ -47,7 +47,7 @@ def stringify(value, replacer=' ', spaces_count=4):
 
         formatted_strings = list(
             map(lambda node: walk(node, depth), node.items())
-        )
+        )  # NOSONAR
 
         ending_filler = replacer * spaces_count * (depth - 1)
         formatted = '\n'.join(formatted_strings)

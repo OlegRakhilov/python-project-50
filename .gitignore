@@ -23,3 +23,5 @@ poetry.lock
 dist/
 
 ci.yml
+
+.ruff+cfche/
