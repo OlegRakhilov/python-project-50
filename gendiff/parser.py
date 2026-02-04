@@ -4,7 +4,7 @@ import yaml
 
 
 def transform_value(value):
-    '''Transforms boolean values to a propper format'''
+    '''Transforms boolean values to a proper format'''
     if isinstance(value, dict):
         return transform_bool(value)
     elif value is None:
@@ -16,7 +16,7 @@ def transform_value(value):
 
 
 def transform_bool(_dict):
-    '''Recursively ransforms bool values to strings with a proper format'''
+    '''Recursively transforms bool values to strings with a proper format'''
     return {key: transform_value(value) for key, value in _dict.items()}
 
 
