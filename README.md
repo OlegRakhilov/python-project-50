@@ -6,6 +6,19 @@
 
 [![asciicast](https://asciinema.org/a/Z9bqrEhi5FVOjtMa4WVp6e8Mx.svg)](https://asciinema.org/a/Z9bqrEhi5FVOjtMa4WVp6e8Mx)
 
+## Описание
+Консольное приложение на Python, реализующее обработку данных и выполнение пользовательских команд.
+
+## Стек
+- Python
+- Git
+- Linux
+
+## Функциональность
+- Обработка пользовательского ввода
+- Реализация логики приложения
+- Работа с функциями и структурой кода
+
 ## Возможности (Features)
 
 - **Поддержка форматов:** Работает с файлами конфигураций в форматах **JSON**, **YAML** и **YML**.
@@ -22,3 +35,9 @@
 Для запуска тестов и генерации отчета о покрытии выполните:
 ```bash
 make test
+
+### Запуск
+git clone https://github.com/OlegRakhilov/python-project-50
+cd python-project-50
+make install
+make start
